@@ -30,7 +30,8 @@ public class CourceMaterial {
             cascade=CascadeType.ALL,
 
             //if you are using FetchType.EAGER then remove the @ToString(exclude = "cource") annotation and if you are using FetchType.LAZY then add @ToString(exclude = "cource") annotation
-            fetch=FetchType.EAGER
+            fetch=FetchType.EAGER,
+            optional=false
     )
     @JoinColumn(
             name = "cource_id",

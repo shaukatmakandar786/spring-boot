@@ -3,6 +3,8 @@ package com.springdatajpaeaxmple.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -30,5 +32,37 @@ public class Cource {
 //            mappedBy = "cource"
 //    )
 //    private CourceMaterial courceMaterial;
+
+
+    @ManyToOne(
+        cascade = CascadeType.ALL
+    )
+    @JoinColumn(
+            name="teacher_id",
+            referencedColumnName = "teacherId"
+    )
+    private Teacher teacher;
+
+    @ManyToMany(
+            cascade = CascadeType.ALL
+    )
+    @JoinTable(
+            name="student_cource_map",
+            joinColumns = @JoinColumn(
+                    name="cource_id",
+                    referencedColumnName = "courceId"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name="student_id",
+                    referencedColumnName = "studentId"
+            )
+    )
+    private List<Student> students;
+
+//    public void addStudent(Student student)
+//    {
+//        if(students==null) students=new ArrayList<>();
+//        students.add(student);
+//    }
 
 }

@@ -2,6 +2,8 @@ package com.springdatajpaeaxmple.repository;
 
 import com.springdatajpaeaxmple.entity.Cource;
 import com.springdatajpaeaxmple.entity.CourceMaterial;
+import com.springdatajpaeaxmple.entity.Student;
+import com.springdatajpaeaxmple.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
