@@ -4,6 +4,7 @@ import com.springjpaexample2.dao.TeacherDao;
 import com.springjpaexample2.entity.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
@@ -21,5 +22,14 @@ public class TeacherService {
     public List<Teacher> getAllTeacher()
     {
         return teacherDao.findAll();
+    }
+    public Teacher updateTeacher(Teacher teacher)
+    {
+        return teacherDao.save(teacher);
+    }
+    public String deleteTeacher(long id)
+    {
+        teacherDao.deleteById(id);
+        return "Deleted successfully";
     }
 }
