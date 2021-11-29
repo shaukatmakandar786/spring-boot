@@ -15,23 +15,23 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
-    @PostMapping("/addteacher")
+    @PostMapping("/teacher")
     public Teacher addTeacher(@RequestBody Teacher teacher)
     {
         return teacherService.addTeacher(teacher);
     }
 
-    @GetMapping("/getteacher")
+    @GetMapping("/teacher")
     public List<Teacher> getAllTeacher()
     {
         return teacherService.getAllTeacher();
     }
-    @PutMapping("/updateteacher")
-    public Teacher updateTeacher(@RequestBody Teacher teacher)
+    @PutMapping("/teacher/{id}")
+    public Teacher updateTeacher(@RequestBody Teacher teacher,@PathVariable long id)
     {
-        return teacherService.updateTeacher(teacher);
+        return teacherService.updateTeacher(teacher,id);
     }
-    @DeleteMapping("/deleteteacher/{id}")
+    @DeleteMapping("/teacher/{id}")
     public String deleteTeacher(@PathVariable long id)
     {
         return teacherService.deleteTeacher(id);

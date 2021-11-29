@@ -13,26 +13,25 @@ public class CourceController {
     @Autowired
     private CourceService courceService;
 
-    @GetMapping("/getcource")
+    @GetMapping("/cource")
     public List<Cource> getAllCource()
     {
         return courceService.getAllCource();
     }
-    @PostMapping("/addcource")
+    @PostMapping("/cource")
     public Cource addCource(@RequestBody Cource cource)
     {
         return courceService.addCource(cource);
     }
 
-    @DeleteMapping("/deletecource/{id}")
-    public String deleteCource(@PathVariable long id)
+    @DeleteMapping("/cource/{id}")
+    public String deleteCourceById(@PathVariable long id)
     {
-        return courceService.deleteCource(id);
+        return courceService.deleteCourceById(id);
     }
-    @PutMapping("/updatebyid/{id}")
-    public Cource updateById(@PathVariable long id)
+    @PutMapping("/cource/{id}")
+    public Cource updateCourceById(@RequestBody Cource cource,@PathVariable long id)
     {
-        return courceService.updateCourceById(id);
+        return courceService.updateCourceById(cource,id);
     }
-
 }

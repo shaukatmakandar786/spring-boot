@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CourceDao extends JpaRepository<Cource,Long> {
 
-    public Cource
 }
 
