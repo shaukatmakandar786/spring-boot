@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Employee List</h1>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee First Name</th>
+                <th>Employee Last Name</th>
+                <th>Employee Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr th:each="employee :${listEmployee}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.firstName}"></td>
+                <td th:text="${employee.lastName}"></td>
+                <td th:text="${employee.email}"></td>
+            </tr>-->
+
+            <th:block  th:each="employee : ${listEmployee}">
+                <tr>
+                    <td>[[$employee.id]]</td>
+                    <td>[[$employee.firstName]]</td>
+                    <td>[[$employee.lastName]]</td>
+                    <td>[[$employee.email]]</td>
+                </tr>
+
+            </th:block>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
