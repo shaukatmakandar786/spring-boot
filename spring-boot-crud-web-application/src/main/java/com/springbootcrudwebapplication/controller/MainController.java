@@ -29,4 +29,12 @@ public class MainController {
         model.addAttribute("listUser",allUser);
         return "users";
     }
+
+    @GetMapping("/user/new")
+    public String showNewForm(Model model)
+    {
+        model.addAttribute("user",new User());
+
+        return "userform";
+    }
 }
