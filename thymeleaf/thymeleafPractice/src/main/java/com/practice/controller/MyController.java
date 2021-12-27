@@ -1,5 +1,6 @@
 package com.practice.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -49,7 +50,20 @@ public class MyController {
 	@GetMapping("/service")
 	public String serviceHandler(Model m)
 	{
+		m.addAttribute("title","This is title");
+		m.addAttribute("subtitle",LocalDateTime.now().toString());
 		return "service";
 	}
-
+	
+	@GetMapping("/aboutnew")
+	public String aboutnew()
+	{
+		return "aboutnew";
+	}
+	
+	@GetMapping("/contact")
+	public String contact()
+	{
+		return "contact";
+	}
 }
