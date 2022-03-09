@@ -22,4 +22,10 @@ public class Employee {
     @Column(name="email",nullable = false)
     private  String email;
 
+    @Enumerated(EnumType.ORDINAL)
+    private Gender gender;
+
+    @Enumerated(EnumType.STRING)
+    private AuthenticationProvider authenticationProvider;
+
 }
