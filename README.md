@@ -1,2 +1,2 @@
-# spring-bo
+# spring-b
 
