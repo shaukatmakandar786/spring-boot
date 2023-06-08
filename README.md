@@ -1,2 +1,2 @@
-# sprin
+# spri
 
